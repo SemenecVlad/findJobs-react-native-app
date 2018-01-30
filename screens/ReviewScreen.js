@@ -14,9 +14,9 @@ class ReviewScreen extends Component {
                 color="rgba(0, 122, 255, 1)"
             />
         ),
-        // headerStyle: {
-        //     marginTop: Platform.OS === 'android' ? 24 : 0
-        // }
+        headerStyle: {
+            marginTop: Platform.OS === 'android' ? 24 : 0
+        }
     })
     render() {
         return (

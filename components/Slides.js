@@ -49,7 +49,10 @@ const styles = {
     slideText: {
         fontSize: 30,
         textAlign: 'center',
-        color: '#fff'
+        color: '#fff',
+        textShadowColor: 'rgba(0,0,0,0.35)',
+        textShadowOffset: {width: 1, height: 1},
+        textShadowRadius: 10
     },
     slideStyle: {
         flex: 1,

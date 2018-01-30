@@ -1,5 +1,8 @@
 import Expo from 'expo';
 import React from 'react';
+import { Provider } from 'react-redux';
+
+import store from './store';
 import { StyleSheet, Text, View } from 'react-native';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 
@@ -26,20 +29,26 @@ export default class App extends React.Component {
           })}
         }, { 
           tabBarPosition: 'bottom',
-          lazyLoad: true
+          lazy: true
         })
       },
     },{
+      navigationOptions: {
+        // Visibility of tabs on the bottom of the screen
+        tabBarVisible:  false
+      },
       swipeEnabled: false,
-      lazyLoad: true,
+      lazy: true,
       animationEnabled: false,
       tabBarPosition: 'bottom',
     });
 
     return (
-      <View style={styles.container}>
-        <MainNavigator />
-      </View>
+      <Provider store={store}>
+        <View style={styles.container}>
+          <MainNavigator />
+        </View>
+      </Provider>
     );
   }
 }
